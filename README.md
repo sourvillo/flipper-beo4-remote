@@ -12,20 +12,22 @@ No extra hardware is needed.
 
 ## Tested
 
-On a BeoSound Ouverture, from close range, firmware Momentum `mntm-009`:
+On a BeoSound Ouverture system with BeoLab 2000 speakers in Master Link link rooms,
+Flipper firmware Momentum `mntm-009`:
 
 | Key | Address / command | Result |
 |---|---|---|
-| Vinyl / wave (PHONO) | `0x01 / 0x93` | ✅ switches to the AUX input |
+| Vinyl / wave (PHONO) | `0x01 / 0x93` | ✅ switches the Ouverture to its AUX input |
 | RADIO | `0x01 / 0x81` | ✅ |
 | CD | `0x01 / 0x92` | ✅ |
+| Volume + / − | `0x01 / 0x60`, `0x01 / 0x64` | ✅ |
 
-PHONO also works when aimed at a BeoLab 2000 in a Master Link link room:
+PHONO also works when aimed at a BeoLab 2000 in a link room:
 it starts the main room's source there.
 
 On the Ouverture the AUX input answers to PHONO, not to A.AUX (`0x01 / 0x83`) or V.AUX (`0x01 / 0x82`).
 
-Not tested yet: A.TAPE, Volume ±, GO, STOP, Standby, ALL off (`0x0F / 0x0C`).
+Not tested yet: A.TAPE, GO, STOP, Standby, ALL off (`0x0F / 0x0C`).
 Reports welcome.
 
 ## Build and install
@@ -58,7 +60,7 @@ Sources:
 Пульт Beo4 для техники Bang & Olufsen на Флиппере. У B&O несущая 455 кГц, а штатное
 приложение «Инфракрасный порт» умеет только 10–56 кГц, поэтому светодиодом управляем
 напрямую через таймер TIM1. Проверено на BeoSound Ouverture: PHONO (вход AUX), RADIO и CD
-переключают источник; PHONO, направленный на BeoLab 2000 в комнате-ссылке, включает там
+переключают источник, громкость ± работает; PHONO, направленный на BeoLab 2000 в комнате-ссылке, включает там
 звук главной комнаты по Master Link. Остальные кнопки пока не проверены.
 
 ## License
