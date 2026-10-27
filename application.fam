@@ -1,0 +1,10 @@
+App(
+    appid="beo4_remote",
+    name="Beo4",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="beo4_remote_app",
+    requires=["gui", "notification"],
+    stack_size=2 * 1024,
+    fap_category="Infrared",
+    fap_description="Пульт Beo4 для Bang & Olufsen: ИК 455 кГц прямо таймером",
+)
